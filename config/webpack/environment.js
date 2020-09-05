@@ -16,8 +16,12 @@ environment.plugins.append("Provide", new webpack.ProvidePlugin({
 
 const config = environment.toWebpackConfig()
 
-config.resolve.alias = {
-    jquery: 'jquery/src/jquery'
-}
+environment.config.merge({
+    resolve: {
+        alias: {
+            jquery: 'jquery/src/jquery',
+        }
+    }
+})
 
 module.exports = environment
